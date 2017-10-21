@@ -12,8 +12,8 @@ def formatLine(line, params):
     return json_str
 
 def main():
-   filename = ""
-   writeFile = "cleaned.json"
+   filename = "D:\\CMSC 455\\Test\\30.json"
+   writeFile = "D:\\CMSC 455\\Cleaned\\cleanedTweets.json"
    file = open(filename)
    outfile = open(writeFile,"w")
    params = ["created_at", "text", "coordinates", "lang"]
