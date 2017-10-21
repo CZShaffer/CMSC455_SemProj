@@ -1,4 +1,5 @@
 import json
+import os
 # import time
 
 def formatLine(line, params):
@@ -12,19 +13,19 @@ def formatLine(line, params):
     return json_str
 
 def main():
-   filename = "D:\\CMSC 455\\Test\\30.json"
-   writeFile = "D:\\CMSC 455\\Cleaned\\cleanedTweets.json"
-   file = open(filename)
-   outfile = open(writeFile,"w")
-   params = ["created_at", "text", "coordinates", "lang"]
-   for line in file:
-       newline = formatLine(line, params)
-       if bool(newline) is True:
-           outfile.write(newline)
-           outfile.write("\n")
+    filename = "D:\\CMSC 455\\Test\\30.json"
+    writeFile = "D:\\CMSC 455\\Cleaned\\cleanedTweets.json"
+    file = open(filename, "r")
+    outfile = open(writeFile,"w")
+    params = ["created_at", "text", "place", "lang"]
+    for line in file:
+        newline = formatLine(line, params)
+        if bool(newline) is True:
+            outfile.write(newline)
+            outfile.write("\n")
 
-   file.close()
-   outfile.close()
+    file.close()
+    outfile.close()
 
 # start_time = time.time()
 main()
