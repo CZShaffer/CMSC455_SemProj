@@ -33,37 +33,51 @@ def deepSort(items,param,deepParam):
 
     return sortedDict
 
-def writeSorted(filename, param, outfile):
+def writeSorted(filename, param, outfile, writeByField=0):
     file = open(filename, "r")
     featureDict = featureSort(file, param)
     for key,item in featureDict.items():
-        outfile.write(key)
+        # outfile.write(key)
+        if writeByField is 1:
+            fieldname = key
+            fieldname += ".json"
+            fieldFile = open(fieldname, "w")
         for line in item:
-            outfile.write("\t")
+            # outfile.write("\t")
             outfile.write(line)
             outfile.write("\n")
+            if writeByField is 1:
+                fieldFile.write(line)
+                fieldFile.write("\n")
 
-def writeDeepSorted(filename, param, deepParam, outfile):
+def writeDeepSorted(filename, param, deepParam, outfile, writeByField=0):
     file = open(filename, "r")
     featureDict = deepSort(file, param, deepParam)
     for key,item in featureDict.items():
-        outfile.write(key)
+        # outfile.write(key)
+        if writeByField is 1:
+            fieldname = key
+            fieldname += ".json"
+            fieldFile = open(fieldname, "w")
         for line in item:
-            outfile.write("\t")
+            # outfile.write("\t")
             outfile.write(line)
             outfile.write("\n")
+            if writeByField is 1:
+                fieldFile.write(line)
+                fieldFile.write("\n")
 
-def multiWrite(filename, paramVals):
+def multiWrite(filename, paramVals, writeByField=0):
     outname = ""
     for item in paramVals:
         if len(item) is 1:
             outname = str(item[0])
             outname += ".json"
-            writeSorted(filename,item[0],open(outname,"w"))
+            writeSorted(filename,item[0],open(outname,"w"),1)
         if len(item) is 2:
             outname = item[0]
             outname += ".json"
-            writeDeepSorted(filename,item[0],item[1],open(outname,"w"))
+            writeDeepSorted(filename,item[0],item[1],open(outname,"w"),1)
 
 
 def filter(items,param,values):
