@@ -1,0 +1,95 @@
+
+.gmaps-toolbar {
+  .toolbar {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 2px;
+    margin-bottom: 5px;
+    width: 100%;
+  }
+
+  .btn {
+    height: 26px;
+    width: 30px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+
+  .notification-area {
+    height: 26px;
+    float: right;
+    z-index: 10;
+    width: auto;
+  }
+
+  .notification-widget {
+    height: 26px;
+    width: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+  }
+
+  .additional-controls-container {
+    display: inline;
+
+    .additional-controls {
+      display: inline;
+    }
+
+  }
+
+}
+
+.gmaps-error-box {
+  padding-left: 0px;
+  margin-bottom: 0px;
+
+  pre {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+  }
+
+  li {
+    cursor: pointer;
+  }
+}
+
+
+@font-face {
+  font-family: 'gmaps-icon-font';
+  src:  url('fonts/gmaps-icon-font.eot?khz269');
+  src:  url('fonts/gmaps-icon-font.eot?khz269#iefix') format('embedded-opentype'),
+  url('fonts/gmaps-icon-font.ttf?khz269') format('truetype'),
+  url('fonts/gmaps-icon-font.woff?khz269') format('woff'),
+  url('fonts/gmaps-icon-font.svg?khz269#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.gmaps-icon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'gmaps-icon-font' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &.line:before {
+    content: "\e900";
+  }
+
+  &.polygon:before {
+    content: "\e901";
+  }
+}
+
